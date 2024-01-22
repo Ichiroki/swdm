@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className="container bg-slate-900 text-slate-200 w-9/12">
+      <div className="lg:container bg-slate-900 text-slate-200 lg:w-11/12">
         <img src={sw} className='mx-auto w-96'/>
         <Tabs/>
         <Routes>
