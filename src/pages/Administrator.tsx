@@ -1,6 +1,13 @@
 import AdminList from "../components/AdminList";
 
-function Administrator() {
+type AdminType = {
+    title: string
+}
+
+function Administrator({title}: AdminType) {
+
+    document.title = title ? "ExT X sW | " + title : 'Administrator'
+
     return (
         <>
             <div className="flex flex-col items-center">

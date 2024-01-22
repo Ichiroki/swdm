@@ -1,4 +1,11 @@
-function Home() {
+type HomeType = {
+    title: string
+}
+
+function Home({title}: HomeType) {
+
+    document.title = title ? "ExT X sW | " + title : 'Home'
+
     return (
         <div className="container bg-slate-900 text-slate-200">
             <div className='flex flex-col lg:flex-row justify-between mx-6 pb-7'>

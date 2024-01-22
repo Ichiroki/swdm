@@ -1,4 +1,11 @@
-function Server() {
+type ServerType = {
+    title: string
+}
+
+function Server({title}: ServerType) {
+
+    document.title = title ? "ExT X sW | " + title : 'Server'
+
     return (
         <>
             <div className="flex flex-col w-full pb-6">
