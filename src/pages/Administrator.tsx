@@ -1,20 +1,18 @@
+import { PageType } from "../app/types/PageTypes";
 import AdminList from "../components/AdminList";
+import WebLayout from "../components/WebLayout";
 
-type AdminType = {
-    title: string
-}
+function Administrator({title}: PageType) {
 
-function Administrator({title}: AdminType) {
-
-    document.title = title ? "ExT X sW | " + title : 'Administrator'
+    document.title = title ? "Secret Weapon Deathmatch | " + title : 'Administrator'
 
     return (
-        <>
+        <WebLayout>
             <div className="flex flex-col items-center">
                 <div>
-                    <h1 className="text-3xl mb-12">Administrator</h1>
+                    <h1 className="text-4xl mb-12 font-semibold">{title}</h1>
                 </div>
-                <div className="flex justify-center gap-24 w-full">
+                <div className="flex flex-col items-center justify-center gap-24 w-full lg:flex-row lg:items-start">
                     <div className="w-2/6">
                         <AdminList title="Code Maintainer" admin={['Kirima', 'eQuinnox']}/>
                     </div>
@@ -25,7 +23,7 @@ function Administrator({title}: AdminType) {
                         <AdminList title="Management" admin={['Evaga', 'mythicalimmortal', 'NeoNinja', 'snowdr1ve', 'TRanYon']}/>
                     </div>
                 </div>
-                <div className="flex justify-center gap-24 w-full">
+                <div className="flex flex-col items-center justify-center gap-24 w-full lg:flex-row lg:items-start">
                     <div className="w-2/6">
                         <AdminList title="Lead Administrator" admin={['Syno', 'jerrykun', 'Biofrost']}/>
                     </div>
@@ -37,7 +35,7 @@ function Administrator({title}: AdminType) {
                     </div>
                 </div>
             </div>
-        </>
+        </WebLayout>
     );
 }
 
