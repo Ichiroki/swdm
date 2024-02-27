@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import sw from './assets/sw.png';
+import sw from '/assets/sw.png';
 import Footer from './components/Footer';
 import Tabs from './components/Tabs';
 import Administrator from './pages/Administrator';

@@ -2,8 +2,8 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { PageType } from "../app/types/PageTypes"
 import WebLayout from "../components/WebLayout"
-import botKirimPin from '../assets/howTo/botkirimpin.png'
-import tombolRegister from '../assets/howTo/tombolregister.png'
+import botKirimPin from '/assets/howTo/botkirimpin.png'
+import tombolRegister from '/assets/howTo/tombolregister.png'
 
 export default function HowTo({title}: PageType) {
     const [isActive, setIsActive] = useState(false)
