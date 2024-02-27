@@ -3,7 +3,7 @@ import WebLayout from "../components/WebLayout";
 
 function Home({title}: PageType) {
 
-    document.title = title ? "ExT X sW | " + title : 'Home'
+    document.title = title ? "Secret Weapon Deathmatch | " + title : 'Home'
 
     return (
         <WebLayout>

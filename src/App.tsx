@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <div className="lg:container bg-slate-900 text-slate-200 lg:w-11/12 antialiased xl:min-h-screen relative">
+      <div className="lg:container bg-slate-900 text-slate-200 lg:w-11/12 antialiased">
         <img src={sw} className='mx-auto w-96'/>
         <Tabs/>
         <Routes>
