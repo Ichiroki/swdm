@@ -1,15 +1,13 @@
+import { PageType } from "../app/types/PageTypes";
 import AdminList from "../components/AdminList";
+import WebLayout from "../components/WebLayout";
 
-type AdminType = {
-    title: string
-}
+function Administrator({title}: PageType) {
 
-function Administrator({title}: AdminType) {
-
-    document.title = title ? "ExT X sW | " + title : 'Administrator'
+    document.title = title ? "Secret Weapon Deathmatch | " + title : 'Administrator'
 
     return (
-        <>
+        <WebLayout>
             <div className="flex flex-col items-center">
                 <div>
                     <h1 className="text-4xl mb-12 font-semibold">{title}</h1>
@@ -37,7 +35,7 @@ function Administrator({title}: AdminType) {
                     </div>
                 </div>
             </div>
-        </>
+        </WebLayout>
     );
 }
 

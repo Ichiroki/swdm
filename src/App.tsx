@@ -1,13 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import sw from './assets/sw.png';
-import Home from './pages/Home';
+import Footer from './components/Footer';
 import Tabs from './components/Tabs';
 import Administrator from './pages/Administrator';
+import Home from './pages/Home';
+import HowTo from './pages/HowTo';
 import Server from './pages/Server';
-import Footer from './components/Footer';
 
 function App() {
-  document.title = "ExT x sw"
+  document.title = "Secret Weapon Deathmatch"
 
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<Home title="Home"/>}>Home</Route>
           <Route path="/administrator" element={<Administrator title="Administrator"/>}>Administrator</Route>
           <Route path="/server" element={<Server title="Server"/>}>Server</Route>
+          <Route path="/how-to" element={<HowTo title="How To"/>}>Server</Route>
         </Routes>
         <Footer/>
       </div>

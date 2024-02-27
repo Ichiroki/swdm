@@ -1,13 +1,12 @@
-type ServerType = {
-    title: string
-}
+import { PageType } from "../app/types/PageTypes";
+import WebLayout from "../components/WebLayout";
 
-function Server({title}: ServerType) {
+function Server({title}: PageType) {
 
-    document.title = title ? "ExT X sW | " + title : 'Server'
+    document.title = title ? "Secret Weapon Deatcmatch | " + title : 'Server'
 
     return (
-        <>
+        <WebLayout>
             <div className="flex flex-col w-full pb-6">
                 <h1 className="text-4xl mb-12 font-semibold text-center">{title}</h1>
                 <div className="flex flex-col items-center mx-12 mb-6">
@@ -33,7 +32,7 @@ function Server({title}: ServerType) {
                     </div>
                 </div>
             </div>
-        </>
+        </WebLayout>
     );
 }
 
