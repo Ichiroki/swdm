@@ -6,23 +6,58 @@ import Administrator from './pages/Administrator';
 import Home from './pages/Home';
 import HowTo from './pages/HowTo';
 import Server from './pages/Server';
+import { useEffect, useState } from 'react';
+import { PacmanLoader } from 'react-spinners';
 
 function App() {
   document.title = "Secret Weapon Deathmatch"
 
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 8000)
+  }, [])
+
   return (
     <>
-      <div className="lg:container bg-slate-900 text-slate-200 lg:w-11/12 antialiased">
-        <img src={sw} className='mx-auto w-96'/>
-        <Tabs/>
-        <Routes>
-          <Route path='/' element={<Home title="Home"/>}>Home</Route>
-          <Route path="/administrator" element={<Administrator title="Administrator"/>}>Administrator</Route>
-          <Route path="/server" element={<Server title="Server"/>}>Server</Route>
-          <Route path="/how-to" element={<HowTo title="How To"/>}>Server</Route>
-        </Routes>
-        <Footer/>
-      </div>
+      {loading ? (
+        <div className="flex flex-col items-center justify-center h-screen bg-slate-700 text-[rgb(243,1,93,1)]">
+          <PacmanLoader
+            color={"rgb(243,1,93,1)"}
+            loading={loading}
+            size={40}
+            // margin={250}
+            className="mx-auto motion-safe:animate-pulse"
+          />
+          <span className="mt-3 motion-safe:animate-pulse text-3xl">Loading</span>
+        </div>
+      ) : (
+        <div className="lg:container bg-slate-900 text-slate-200 antialiased">
+          <img src={sw} className="mx-auto w-96" />
+          <Tabs />
+          <Routes>
+            <Route path="/" element={<Home title="Home" />}>
+              Home
+            </Route>
+            <Route
+              path="/administrator"
+              element={<Administrator title="Administrator" />}
+            >
+              Administrator
+            </Route>
+            <Route path="/server" element={<Server title="Server" />}>
+              Server
+            </Route>
+            <Route path="/how-to" element={<HowTo title="How To" />}>
+              Server
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
+      )}
     </>
   );
 }

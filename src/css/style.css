@@ -1,10 +1,10 @@
 @tailwind base;
 
-@layer base {
+/* @layer base {
     body {
         background: rgb(243,1,93,1);
     }
-}
+} */
 
 @tailwind components;
 
