@@ -8,9 +8,9 @@ function Tabs() {
                     <li className="pb-2">
                         <NavLink end to="/" className={({isActive}) => isActive ? "bg-slate-200 text-slate-900 p-3 rounded-t-lg" : "rounded-t-lg hover:bg-slate-200 hover:text-slate-900 p-3 transition"}>Home</NavLink>
                     </li>
-                    <li className="pb-2">
+                    {/* <li className="pb-2">
                         <NavLink to="/administrator" className={({isActive}) => isActive ? "bg-slate-200 text-slate-900 p-3 rounded-t-lg" : "rounded-t-lg hover:bg-slate-200 hover:text-slate-900 p-3 transition"}>Administrator</NavLink>
-                    </li>
+                    </li> */}
                     <li className="pb-2">
                         <NavLink to="/server" className={({isActive}) => isActive ? "bg-slate-200 text-slate-900 p-3 rounded-t-lg" : "rounded-t-lg hover:bg-slate-200 hover:text-slate-900 p-3 transition"}>Server</NavLink>
                     </li>

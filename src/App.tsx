@@ -1,13 +1,12 @@
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import sw from '/assets/sw.png';
+import { PacmanLoader } from 'react-spinners';
 import Footer from './components/Footer';
 import Tabs from './components/Tabs';
-import Administrator from './pages/Administrator';
 import Home from './pages/Home';
 import HowTo from './pages/HowTo';
 import Server from './pages/Server';
-import { useEffect, useState } from 'react';
-import { PacmanLoader } from 'react-spinners';
+import sw from '/assets/sw.png';
 
 function App() {
   document.title = "Secret Weapon Deathmatch"
@@ -24,7 +23,7 @@ function App() {
   return (
     <>
       {loading ? (
-        <div className="flex flex-col items-center justify-center h-screen bg-slate-700 text-[rgb(243,1,93,1)]">
+        <div className="flex flex-col items-center justify-center h-screen bg-[#5a233c] text-[rgb(243,1,93,1)]">
           <PacmanLoader
             color={"rgb(243,1,93,1)"}
             loading={loading}
@@ -35,19 +34,19 @@ function App() {
           <span className="mt-3 motion-safe:animate-pulse text-3xl">Loading</span>
         </div>
       ) : (
-        <div className="lg:container bg-slate-900 text-slate-200 antialiased">
-          <img src={sw} className="mx-auto w-96" />
+        <div className="lg:container bg-[#5a233c] text-slate-200 antialiased">
+          <img src={sw} className="mx-auto w-52 mb-6" />
           <Tabs />
           <Routes>
             <Route path="/" element={<Home title="Home" />}>
               Home
             </Route>
-            <Route
+            {/* <Route
               path="/administrator"
               element={<Administrator title="Administrator" />}
             >
               Administrator
-            </Route>
+            </Route> */}
             <Route path="/server" element={<Server title="Server" />}>
               Server
             </Route>
