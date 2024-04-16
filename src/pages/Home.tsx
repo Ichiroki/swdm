@@ -17,19 +17,14 @@ function Home({title}: PageType) {
                         Selamat datang di sW Secret Weapon D/M
                         </h1>
                         <p className='mb-6'>
-                        Secret Weapon Deathmatch merupakan server deathmatch dengan multi gamemode yang dikembangkan dari 0 oleh Koky bersama Tim nya (Koky's Deathmatch) dan sekarang dilanjutkan oleh equinnox dan ohmypxl dengan nama baru. Pada sW Deathmatch terdapat macam-macam mode, antara lain Arena/DM, Gangwar, Police Pursuit, dan Duel. 
+                        Secret Weapon, juga dikenal dengan nama asli M4D (Marked4Death), adalah sebuah komunitas yang berakar dalam permainan SA:MP (San Andreas Multiplayer), yang didirikan oleh jnseLz alias Evaga, FireINSIDE alias Yongky, serta anggota-anggota clan lainnya pada sekitar tahun 2017 di server UIF. Sejak awal, fokus utama clan ini tidak hanya terbatas pada satu server saja, melainkan juga aktif dalam berbagai clanwar (CW/TG) di ranah Run Weapon (Sawnoff Shotgun).
                         </p>
                         <p className='mb-6'>
-                        sW Deathmatch cukup berbeda dari server deathmatch yang sudah ada karena memiliki fitur custom skin yang dapat dilihat oleh player lain juga (0.3DL). Disini juga kalian dapat membuat clan ingame yang berguna untuk chitchat ingame dan juga tim khusus pada gangwar, sehingga kalian dapat melakukan teaming bersama clan kalian saja!
+                        Pada tanggal 28 Juli 2022, clan ini mengambil langkah berani dengan menciptakan server deathmatch yang diberi nama Milky Deathmatch. Tak berhenti di situ, pada tanggal 6 Agustus 2022, mereka mengubah nama dan mode permainan server menjadi Secret Weapon Attack and Defend. Keberadaan sW A/D telah memperkaya aktivitas para pemain SA:MP di Indonesia, yang sebelumnya terfokus pada kegiatan roleplay, freeroam, dan drifting, dengan memperkenalkan TCW (Training Clan War) pada gamemode Attack and Defend.
                         </p>
                         <p className='mb-6'>
-                        Kalian dapat mendownload cache server pada link dibawah, cache ini diekstrak ke Documents\GTA San Andreas User Files\SAMP\cache. Hal ini diwajibkan untuk pengguna 0.3DL yang tidak dapat mendownload ingame, pengguna 0.3.7 tidak diperlukan untuk mendownload ini.
+                        Setahun kemudian, tepatnya pada tanggal 23 Agustus 2023, Secret Weapon meluncurkan server dengan mode permainan yang beragam, termasuk Deathmatch, Gangwar, Duel, Versus, dan Freeroam, yang dikenal dengan nama Secret Weapon Deathmatch. Dengan lebih dari 60 pemain aktif setiap harinya, komunitas Secret Weapon terus berkembang.
                         </p>
-                        <a href="src\download\157.254.166.215.7011.rar" className="mb-5 before:rounded-md before:hover:p-5 before:block before:absolute before:-inset-1 before:w-0 relative inline-block before:hover:bg-[#948c94] before:hover:w-[9rem] before:transition-[width] before:duration-300 before:ease-in-out before:active:w-full" download={true}>
-                            <span className="relative text-white flex items-center gap-5 ml-2 mt-1">
-                                Download Cache
-                            </span>
-                        </a>
                         <p className='mb-6 text-start'>
                         Info selengkapnya berada di discord server resmi sW D/M
                         </p>

@@ -36,24 +36,18 @@ function App() {
       ) : (
         <div className="lg:container bg-[#5a233c] text-slate-200 antialiased">
           <img src={sw} className="mx-auto w-52 mb-6" />
-          <Tabs />
-          <Routes>
-            <Route path="/" element={<Home title="Home" />}>
-              Home
-            </Route>
-            {/* <Route
-              path="/administrator"
-              element={<Administrator title="Administrator" />}
-            >
-              Administrator
-            </Route> */}
-            <Route path="/server" element={<Server title="Server" />}>
-              Server
-            </Route>
-            <Route path="/how-to" element={<HowTo title="How To" />}>
-              Server
-            </Route>
-          </Routes>
+            <Tabs />
+            <Routes>
+              <Route path="/" element={<Home title="Home" />} >
+                Home
+              </Route>
+              <Route path="/server" element={<Server title="Server" />}>
+                Server
+              </Route>
+              <Route path="/how-to" element={<HowTo title="How To" />}>
+                Server
+              </Route>
+            </Routes>
           <Footer />
         </div>
       )}
