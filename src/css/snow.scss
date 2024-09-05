@@ -1,0 +1,59 @@
+@use 'sass:math';
+
+$d: 70;
+$w: 600;
+$s: 3s;
+
+// snow image
+$grad: ();
+@for $i from 0 to $d {
+    $v: random(4) + 2;
+    $a: random(5) * .1 + .5;
+    $grad : $grad, radial-gradient(
+        $v+px $v+px at
+        (random($w - $v * 2) + $v)+px
+        (random($w - $v * 2) + $v)+px,
+        rgba(255, 255, 255, $a) 50%,
+        rgba(0, 0, 0, 0)
+    ) !global;
+}
+
+html {
+    height: 100vh;
+    background: linear-gradient(#1230AE 30%, #6C48C5);
+    overflow: hidden;
+}
+
+.snow {
+    &::after, &::before {
+        position: absolute;
+        top: -$w + px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: $grad;
+        background-size: $w + px $w + px;
+        animation: snow $s linear infinite;
+        content: "";
+    }
+
+    &::after {
+        margin-left: math.div(-$w/3, px);
+        opacity: .4;
+        animation-duration: $s*2;
+        filter: blur(3px);
+    }
+
+    &::before {
+        animation-duration: $s*3;
+        margin-left: math.div(-$w/2, px);
+        opacity: .65;
+        filter: blur(1.5px);
+    }
+}
+
+@keyframes snow {
+    to {
+        transform: translateY($w + px);
+    }
+}

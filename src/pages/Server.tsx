@@ -17,7 +17,7 @@ function Server({title}: PageType) {
                     <div className="flex flex-col items-center mb-10">
                     <h1 className="mb-6 text-xl font-semibold border-b-2 w-fit">Death Match</h1>
                         <p>
-                            157.254.166.215:7011 / play.swdm.my.id:7011
+                            15.235.149.122:7777 / play.swdm.my.id:7777
                         </p>
                     </div>
                     <div className="flex flex-col items-center">

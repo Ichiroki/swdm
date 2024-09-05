@@ -6,7 +6,6 @@ import Tabs from './components/Tabs';
 import Home from './pages/Home';
 import HowTo from './pages/HowTo';
 import Server from './pages/Server';
-import sw from '/assets/sw.png';
 
 function App() {
   document.title = "Secret Weapon Deathmatch"
@@ -17,7 +16,7 @@ function App() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 8000)
+    }, 3000)
   }, [])
 
   return (
@@ -34,8 +33,8 @@ function App() {
           <span className="mt-3 motion-safe:animate-pulse text-3xl">Loading</span>
         </div>
       ) : (
-        <div className="lg:container bg-[#5a233c] text-slate-200 antialiased">
-          <img src={sw} className="mx-auto w-52 mb-6" />
+        <div className="">
+          {/* <img src={sw} className="" /> */}
             <Tabs />
             <Routes>
               <Route path="/" element={<Home title="Home" />} >
