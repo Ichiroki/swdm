@@ -6,8 +6,8 @@ function Home({title}: PageType) {
 
     return (
         <>
-            <div className="snow">
-
+            <div className="snow-canvas">
+                <div className="snow"></div>
             </div>
         </>
     );

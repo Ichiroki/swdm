@@ -34,7 +34,6 @@ function App() {
         </div>
       ) : (
         <div className="">
-          {/* <img src={sw} className="" /> */}
             <Tabs />
             <Routes>
               <Route path="/" element={<Home title="Home" />} >

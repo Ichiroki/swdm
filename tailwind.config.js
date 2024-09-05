@@ -11,6 +11,9 @@ export default {
         'width': 'width',
       }
     },
+    fontFamily: {
+      'inter': ['Inter, sans-serif']
+    },
     container: {
       center: true,
     }

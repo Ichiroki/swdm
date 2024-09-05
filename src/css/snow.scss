@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:color';
 
 $d: 70;
 $w: 600;
@@ -19,41 +20,133 @@ $grad: ();
 }
 
 html {
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(#1230AE 30%, #6C48C5);
-    overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow:hidden;
 }
+.snow-canvas {
 
-.snow {
-    &::after, &::before {
-        position: absolute;
-        top: -$w + px;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-image: $grad;
-        background-size: $w + px $w + px;
-        animation: snow $s linear infinite;
-        content: "";
-    }
-
-    &::after {
-        margin-left: math.div(-$w/3, px);
-        opacity: .4;
-        animation-duration: $s*2;
-        filter: blur(3px);
-    }
-
-    &::before {
-        animation-duration: $s*3;
-        margin-left: math.div(-$w/2, px);
-        opacity: .65;
-        filter: blur(1.5px);
+    .snow {
+        &::after, &::before {
+            position: absolute;
+            top: -$w + px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: $grad;
+            background-size: $w + px $w + px;
+            animation: snow $s linear infinite;
+            content: "";
+        }
+    
+        &::after {
+            margin-left: math.div(-$w/3, px);
+            opacity: .4;
+            animation-duration: $s*2;
+            filter: blur(3px);
+        }
+    
+        &::before {
+            animation-duration: $s*3;
+            margin-left: math.div(-$w/2, px);
+            opacity: .65;
+            filter: blur(1.5px);
+        }
     }
 }
 
 @keyframes snow {
     to {
         transform: translateY($w + px);
+    }
+}
+
+.navbar-canvas {
+    background: rgba(255, 255, 255, 0.39);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid rgba(255, 255, 255, 0.54);
+    .navbar-menu {
+        & a {
+            position: relative;
+        }
+    
+        & a::after {
+            content: "";
+            height: 3px;
+            width: 0;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            background: #ddd;
+            transition: width .3s;
+        }
+    
+        & a:hover::after {
+            width: 100%;
+        }
+    }
+
+    .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+
+        width: 40%;
+
+        position: absolute;
+        top: 72px;
+        right: 0;
+        color: #333;
+
+        overflow: hidden;
+
+        // glassmorphism
+
+        background: rgba(255, 255, 255, 0.39);
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.3px);
+        -webkit-backdrop-filter: blur(6.3px);
+        border: 1px solid rgba(255, 255, 255, 0.54);
+
+        transition: all .5s;
+        & a {
+            font-weight: 600;
+            padding: 10px;
+
+            transition: all .3s;
+            z-index: 20;
+
+            position: relative;
+        }
+
+        & a::after {
+            content: '';
+            width: 0;
+            background-color: darken($color: #FF0066, $amount: 25%);
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -10;
+
+            transition: width .3s ease-out 0s;
+        }
+
+        & a:hover {
+            color: white;
+        }
+
+        & a:hover::after {
+            width: 100%;
+        }
+
+        // & a:hover {
+        //     background-color: #aaa;
+        // }
     }
 }
