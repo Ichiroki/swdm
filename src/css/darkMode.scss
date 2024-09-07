@@ -1,0 +1,12 @@
+$onyx: #404040;
+$cultured: #f5f5f5;
+
+html[data-theme="light"] {
+    background-color: $cultured;
+    color: $onyx;
+}
+
+html[data-theme="dark"] {
+    background-color: $onyx;
+    color: $cultured;
+}

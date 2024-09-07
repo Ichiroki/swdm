@@ -1,6 +1,8 @@
 @use 'sass:math';
 @use 'sass:color';
 
+@use 'darkMode';
+
 $d: 70;
 $w: 600;
 $s: 3s;
@@ -20,14 +22,15 @@ $grad: ();
 }
 
 html {
+    @apply overflow-auto lg:overflow-hidden;
+
     height: 100%;
     background: linear-gradient(#1230AE 30%, #6C48C5);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow:hidden;
 }
-.snow-canvas {
 
+.snow-canvas {
     .snow {
         &::after, &::before {
             position: absolute;
@@ -42,7 +45,7 @@ html {
         }
     
         &::after {
-            margin-left: math.div(-$w/3, px);
+            margin-left: math.div(-$w, 3) + px;
             opacity: .4;
             animation-duration: $s*2;
             filter: blur(3px);
@@ -50,7 +53,7 @@ html {
     
         &::before {
             animation-duration: $s*3;
-            margin-left: math.div(-$w/2, px);
+            margin-left: math.div(-$w, 2) + px;
             opacity: .65;
             filter: blur(1.5px);
         }
@@ -64,11 +67,7 @@ html {
 }
 
 .navbar-canvas {
-    background: rgba(255, 255, 255, 0.39);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.3px);
-    -webkit-backdrop-filter: blur(6.3px);
-    border: 1px solid rgba(255, 255, 255, 0.54);
+    background-color: aliceblue;
     .navbar-menu {
         & a {
             position: relative;
@@ -81,7 +80,7 @@ html {
             position: absolute;
             bottom: -3px;
             left: 0;
-            background: #ddd;
+            background: #333;
             transition: width .3s;
         }
     
@@ -96,6 +95,9 @@ html {
 
         width: 40%;
 
+        padding: 10px;
+        gap: 5px;
+
         position: absolute;
         top: 72px;
         right: 0;
@@ -105,13 +107,7 @@ html {
 
         // glassmorphism
 
-        background: rgba(255, 255, 255, 0.39);
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(6.3px);
-        -webkit-backdrop-filter: blur(6.3px);
-        border: 1px solid rgba(255, 255, 255, 0.54);
+        background-color: aliceblue;
 
         transition: all .5s;
         & a {
@@ -126,6 +122,7 @@ html {
 
         & a::after {
             content: '';
+            border-radius: 12px;
             width: 0;
             background-color: darken($color: #FF0066, $amount: 25%);
             height: 100%;
@@ -144,9 +141,88 @@ html {
         & a:hover::after {
             width: 100%;
         }
+    }
+}
 
-        // & a:hover {
-        //     background-color: #aaa;
-        // }
+.main-canvas {
+
+    @apply w-[90%] lg:w-[65%];
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 16px;
+
+    padding: 1.2rem 0;
+
+    background: rgba(255, 255, 255, 0.39);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid rgba(255, 255, 255, 0.54);
+
+    .main-title {
+        @apply text-white text-center text-[1.75rem] lg:text-[3rem];
+
+    }
+
+    & .main-header {
+        @apply text-white flex flex-col lg:flex-row items-center justify-center py-5;
+
+        & div:nth-child(1) {
+            @apply flex flex-col justify-center items-center lg:w-1/2;
+
+            p {
+                @apply p-5 text-xl;
+
+                text-align: justify;
+                text-justify: inter-word;
+            }
+        }
+
+        & div:nth-child(2) {
+            @apply w-full lg:w-1/2 px-5;
+
+            ul {
+                @apply flex flex-col lg:flex-row gap-3 items-center justify-between;
+
+                li {
+                    @apply w-full lg:w-1/2;
+                }
+
+                li > p:first-child {
+                    @apply text-center text-lg lg:text-xl;
+                }
+
+                li > p:last-child {
+                    @apply text-center mt-3 lg:text-2xl;
+                }
+            }
+        }
+    }
+    .main-button {
+        @apply flex justify-center items-center w-full px-5 gap-5 pt-4 text-white;
+
+        a {
+            @apply border-2 rounded-md px-5 py-2 text-sm text-center relative font-semibold;
+        }
+        
+        a:first-child {
+            @apply flex items-center justify-center gap-3;
+        }
+
+        a::after {
+            content: '';
+            background-color: darken($color: #FF0066, $amount: 25%);;
+            width: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -10;
+            height: 100%;
+            transition: width .3s ease-in-out;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
     }
 }

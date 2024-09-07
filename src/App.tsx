@@ -33,21 +33,24 @@ function App() {
           <span className="mt-3 motion-safe:animate-pulse text-3xl">Loading</span>
         </div>
       ) : (
-        <div className="">
-            <Tabs />
-            <Routes>
-              <Route path="/" element={<Home title="Home" />} >
-                Home
-              </Route>
-              <Route path="/server" element={<Server title="Server" />}>
-                Server
-              </Route>
-              <Route path="/how-to" element={<HowTo title="How To" />}>
-                Server
-              </Route>
-            </Routes>
-          <Footer />
-        </div>
+        // <div className="">
+        //     <Routes>
+        //       <Route path="/" element={<Home title="Home" />} >
+        //         Home
+        //       </Route>
+        //       <Route path="/server" element={<Server title="Server" />}>
+        //         Server
+        //       </Route>
+        //       <Route path="/how-to" element={<HowTo title="How To" />}>
+        //         Server
+        //       </Route>
+        //     </Routes>
+        //   <Footer />
+        // </div>
+        <>
+          <Tabs />
+          <Home title='Secret Weapon Deathmatch' />
+        </>
       )}
     </>
   );
